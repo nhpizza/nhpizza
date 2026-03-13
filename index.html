@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NH PIZZA</title>
+    <meta name="description" content="NH Pizza offers premium handcrafted pizzas, burgers and pasta made with fresh ingredients.">
+    <meta name="keywords" content="pizza, burgers, pasta, nh pizza">
+    <meta name="author" content="NH Pizza">
+    <link rel="icon" href="assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 z-10">
+                    <img src="images/logo.png" class="nav-logo" alt="Logo">
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#" onclick="showPage('home')" class="nav-link text-white font-medium hover:text-brand-yellow transition-colors" data-page="home">Home</a>
+                    <a href="#" onclick="showPage('menu')" class="nav-link text-white font-medium hover:text-brand-yellow transition-colors" data-page="menu">Menu</a>
+                    <a href="#" onclick="showPage('deals')" class="nav-link text-white font-medium hover:text-brand-yellow transition-colors" data-page="deals">Deals</a>
+                    <a href="#" onclick="showPage('about')" class="nav-link text-white font-medium hover:text-brand-yellow transition-colors" data-page="about">About Us</a>
+                    <a href="#" onclick="showPage('contact')" class="nav-link text-white font-medium hover:text-brand-yellow transition-colors" data-page="contact">Contact</a>
+                </div>
+
+                <!-- Order Button -->
+                <a href="https://wa.me/923140266865?text=Hello%20NH%20Pizza,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="hidden md:flex btn-primary px-6 py-3 rounded-full text-brand-black font-semibold">
+                    Order Now
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white z-10" aria-label="Toggle menu">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="fixed inset-0 bg-brand-black transform translate-x-full transition-transform duration-300 md:hidden">
+            <div class="flex flex-col items-center justify-center h-full gap-8">
+                <a href="#" onclick="showPage('home'); closeMobileMenu();" class="text-2xl font-semibold text-white hover:text-brand-yellow transition-colors">Home</a>
+                <a href="#" onclick="showPage('menu'); closeMobileMenu();" class="text-2xl font-semibold text-white hover:text-brand-yellow transition-colors">Menu</a>
+                <a href="#" onclick="showPage('deals'); closeMobileMenu();" class="text-2xl font-semibold text-white hover:text-brand-yellow transition-colors">Deals</a>
+                <a href="#" onclick="showPage('about'); closeMobileMenu();" class="text-2xl font-semibold text-white hover:text-brand-yellow transition-colors">About Us</a>
+                <a href="#" onclick="showPage('contact'); closeMobileMenu();" class="text-2xl font-semibold text-white hover:text-brand-yellow transition-colors">Contact</a>
+                <a href="https://wa.me/923140266865?text=Hello%20NH%20Pizza,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn-primary px-8 py-4 rounded-full text-brand-black font-semibold text-lg mt-4">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <main id="homePage" class="page active">
+        <!-- Hero Section -->
+        <section class="min-h-screen hero-pattern relative flex items-center overflow-hidden pt-20">
+            <!-- Decorative Elements -->
+            <div class="pizza-deco top-32 left-10 animate-float opacity-60 hidden lg:block">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="55" fill="#E5B938" opacity="0.9" />
+                    <circle cx="40" cy="45" r="8" fill="#C41E3A" />
+                    <circle cx="75" cy="50" r="7" fill="#C41E3A" />
+                    <circle cx="55" cy="75" r="9" fill="#C41E3A" />
+                    <circle cx="85" cy="80" r="6" fill="#C41E3A" />
+                </svg>
+            </div>
+            <div class="pizza-deco top-48 right-20 animate-float-reverse opacity-50 hidden lg:block">
+                <svg width="100" height="100" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="55" fill="#E5B938" opacity="0.8" />
+                    <circle cx="35" cy="50" r="7" fill="#C41E3A" />
+                    <circle cx="70" cy="45" r="8" fill="#C41E3A" />
+                    <circle cx="50" cy="80" r="6" fill="#C41E3A" />
+                </svg>
+            </div>
+            <div class="pizza-deco bottom-32 left-1/4 animate-float opacity-40 hidden lg:block">
+                <svg width="80" height="80" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="55" fill="#E5B938" opacity="0.7" />
+                    <circle cx="45" cy="55" r="6" fill="#C41E3A" />
+                    <circle cx="70" cy="70" r="7" fill="#C41E3A" />
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <div class="reveal">
+                            <span class="inline-block px-4 py-2 bg-brand-yellow/10 border border-brand-yellow/30 rounded-full text-brand-yellow text-sm font-medium mb-6">
+                                Premium Quality Since 2018
+                            </span>
+                        </div>
+                        <h1 class="reveal delay-1 text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
+                            Taste The <br />
+                            <span class="text-brand-yellow">Perfect</span> Slice
+                        </h1>
+                        <p class="reveal delay-2 text-lg sm:text-xl text-brand-text max-w-xl mb-8 font-light">
+                            Handcrafted with passion, baked to perfection. Experience the authentic taste of premium pizzas made with the finest ingredients.
+                        </p>
+                        <div class="reveal delay-3 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="https://wa.me/923140266865?text=Hello%20NH%20Pizza,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn-primary px-8 py-4 rounded-full text-brand-black font-bold text-lg inline-flex items-center justify-center gap-2">
+                                Order Now
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="#" onclick="showPage('deals')" class="btn-secondary px-8 py-4 rounded-full text-brand-yellow font-bold text-lg inline-flex items-center justify-center gap-2">
+                                View Deals
+                            </a>
+                        </div>
+                    </div>
+                    <div class="reveal delay-4 relative">
+                        <div class="relative w-full aspect-square max-w-lg mx-auto">
+                            <!-- Pizza Hero Image -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-yellow/20 to-transparent rounded-full blur-3xl">
+                            </div>
+                            <div class="relative z-10 w-full h-full rounded-full overflow-hidden border-4 border-brand-yellow/20">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=600&fit=crop" alt="Delicious Pizza" class="w-full h-full object-cover animate-float">
+                            </div>
+                            <!-- Price Tag -->
+                            <div class="absolute -bottom-4 -right-4 bg-brand-yellow text-brand-black px-6 py-3 rounded-full font-bold text-xl shadow-2xl">
+                                Starting $12.99
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="py-24 bg-brand-dark relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-yellow/5 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal-left relative">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=500&fit=crop" alt="NH Pizza Kitchen" class="rounded-2xl w-full shadow-2xl">
+                            <div class="absolute -bottom-6 -right-6 bg-brand-yellow text-brand-black p-6 rounded-2xl shadow-xl">
+                                <div class="text-4xl font-black">8+</div>
+                                <div class="text-sm font-medium">Years of Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal-right">
+                        <span class="text-brand-yellow font-medium tracking-wider uppercase">Our Story</span>
+                        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 leading-tight">
+                            Crafting Happiness<br />One Slice at a Time
+                        </h2>
+                        <p class="text-brand-text text-lg leading-relaxed mb-6">
+                            NH Pizza was born from a simple belief: everyone deserves to experience the joy of truly exceptional pizza. Our journey began in 2018 with a small kitchen and big dreams.
+                        </p>
+                        <p class="text-brand-text text-lg leading-relaxed mb-8">
+                            Today, we continue to honor that vision by using only the finest ingredients, time-tested recipes passed down through generations, and an unwavering commitment to quality that you can taste in every bite.
+                        </p>
+                        <div class="flex flex-wrap gap-8">
+                            <div>
+                                <div class="text-3xl font-bold text-brand-yellow">50K+</div>
+                                <div class="text-brand-text">Happy Customers</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-brand-yellow">30+</div>
+                                <div class="text-brand-text">Menu Items</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-brand-yellow">4.9</div>
+                                <div class="text-brand-text">Average Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-24 bg-brand-black relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="reveal text-brand-yellow font-medium tracking-wider uppercase">Why Us</span>
+                    <h2 class="reveal delay-1 text-4xl sm:text-5xl font-bold mt-4">Why Choose Us</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="reveal delay-2 bg-brand-card rounded-2xl p-8 text-center group hover:bg-brand-yellow/5 transition-colors duration-300 border border-transparent hover:border-brand-yellow/20">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-brand-yellow/10 rounded-full flex items-center justify-center group-hover:bg-brand-yellow/20 transition-colors">
+                            <svg class="w-10 h-10 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Healthy Food</h3>
+                        <p class="text-brand-text leading-relaxed">We use fresh, locally-sourced ingredients with no artificial preservatives. Your health is our priority.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="reveal delay-3 bg-brand-card rounded-2xl p-8 text-center group hover:bg-brand-yellow/5 transition-colors duration-300 border border-transparent hover:border-brand-yellow/20">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-brand-yellow/10 rounded-full flex items-center justify-center group-hover:bg-brand-yellow/20 transition-colors">
+                            <svg class="w-10 h-10 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Fastest Delivery</h3>
+                        <p class="text-brand-text leading-relaxed">Hot and fresh at your door in 30 minutes or less. We guarantee your pizza arrives perfect every time.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="reveal delay-4 bg-brand-card rounded-2xl p-8 text-center group hover:bg-brand-yellow/5 transition-colors duration-300 border border-transparent hover:border-brand-yellow/20">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-brand-yellow/10 rounded-full flex items-center justify-center group-hover:bg-brand-yellow/20 transition-colors">
+                            <svg class="w-10 h-10 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Original Recipes</h3>
+                        <p class="text-brand-text leading-relaxed">Secret family recipes passed down through generations. Authentic flavors you won't find anywhere else.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Deals Section -->
+        <section class="py-24 bg-brand-dark relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-black to-transparent h-32"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12">
+                    <div>
+                        <span class="reveal text-brand-yellow font-medium tracking-wider uppercase">Limited Time</span>
+                        <h2 class="reveal delay-1 text-4xl sm:text-5xl font-bold mt-4">Hot Deals</h2>
+                    </div>
+                    <a href="#" onclick="showPage('deals')" class="reveal delay-2 text-brand-yellow font-medium hover:underline flex items-center gap-2">
+                        View All Deals
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="dealsGrid">
+                    <!-- Deals will be populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Menu Section -->
+        <section class="py-24 bg-brand-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="reveal text-brand-yellow font-medium tracking-wider uppercase">Most Popular</span>
+                    <h2 class="reveal delay-1 text-4xl sm:text-5xl font-bold mt-4">Featured Menu</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="featuredGrid">
+                    <!-- Featured items will be populated by JS -->
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" onclick="showPage('menu')" class="reveal btn-secondary px-8 py-4 rounded-full text-brand-yellow font-bold text-lg inline-flex items-center gap-2">
+                        View Full Menu
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Gallery -->
+        <section class="py-24 bg-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="reveal text-brand-yellow font-medium tracking-wider uppercase">Follow Us</span>
+                    <h2 class="reveal delay-1 text-4xl sm:text-5xl font-bold mt-4">Instagram Feed</h2>
+                    <a href="#">
+                        <p class="reveal delay-2 text-brand-text mt-4">@nhpizza</p>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="instagramGrid">
+                    <!-- Instagram items will be populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="py-24 bg-brand-yellow relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\" 60\ " height=\"60\ " viewBox=\"0 0 60 60\ " xmlns=\"http://www.w3.org/2000/svg\ "%3E%3Cg fill=\"none\ " fill-rule=\"evenodd\ "%3E%3Cg
+                fill=\"%23000000\ " fill-opacity=\"0.05\ "%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\ "/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="reveal text-center">
+                        <div class="text-5xl sm:text-6xl font-black text-brand-black">
+                            <span class="counter" data-target="15">0</span>+
+                        </div>
+                        <div class="text-brand-black/70 font-medium mt-2">Awards Won</div>
+                    </div>
+                    <div class="reveal delay-1 text-center">
+                        <div class="text-5xl sm:text-6xl font-black text-brand-black">
+                            <span class="counter" data-target="50000">0</span>+
+                        </div>
+                        <div class="text-brand-black/70 font-medium mt-2">Happy Customers</div>
+                    </div>
+                    <div class="reveal delay-2 text-center">
+                        <div class="text-5xl sm:text-6xl font-black text-brand-black">
+                            <span class="counter" data-target="100000">0</span>+
+                        </div>
+                        <div class="text-brand-black/70 font-medium mt-2">Orders Served</div>
+                    </div>
+                    <div class="reveal delay-3 text-center">
+                        <div class="text-5xl sm:text-6xl font-black text-brand-black">
+                            <span class="counter" data-target="30">0</span>+
+                        </div>
+                        <div class="text-brand-black/70 font-medium mt-2">Menu Items</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="py-24 bg-brand-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="reveal text-brand-yellow font-medium tracking-wider uppercase">Testimonials</span>
+                    <h2 class="reveal delay-1 text-4xl sm:text-5xl font-bold mt-4">What Our Customers Say</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8" id="reviewsGrid">
+                    <!-- Reviews will be populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Menu Categories -->
+        <section class="py-24 bg-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="reveal text-brand-yellow font-medium tracking-wider uppercase">Explore</span>
+                    <h2 class="reveal delay-1 text-4xl sm:text-5xl font-bold mt-4">Browse by Category</h2>
+                </div>
+                <!-- Tabs -->
+                <div class="reveal delay-2 flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="tab-btn active px-6 py-3 rounded-full font-semibold border-2 border-brand-yellow" data-category="pizza">Pizza</button>
+                    <button class="tab-btn px-6 py-3 rounded-full font-semibold border-2 border-brand-yellow" data-category="burger">Burger</button>
+                    <button class="tab-btn px-6 py-3 rounded-full font-semibold border-2 border-brand-yellow" data-category="pasta">Pasta</button>
+                    <button class="tab-btn px-6 py-3 rounded-full font-semibold border-2 border-brand-yellow" data-category="drinks">Drinks</button>
+                </div>
+                <!-- Menu Grid -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="categoryGrid">
+                    <!-- Items will be populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MENU PAGE -->
+    <main id="menuPage" class="page">
+        <!-- Banner -->
+        <section class="pt-32 pb-16 bg-brand-dark relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-yellow/10 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <nav class="text-brand-text mb-4">
+                    <a href="#" onclick="showPage('home')" class="hover:text-brand-yellow transition-colors">Home</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-brand-yellow">Menu</span>
+                </nav>
+                <h1 class="text-5xl sm:text-6xl font-black">Our Menu</h1>
+                <p class="text-brand-text text-xl mt-4 max-w-2xl">Explore our full range of handcrafted delicacies, made fresh daily with premium ingredients.</p>
+            </div>
+        </section>
+
+        <!-- Full Menu -->
+        <section class="py-16 bg-brand-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Burgers -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                        <span class="w-12 h-1 bg-brand-yellow"></span> Burgers
+                    </h2>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="burgerMenuGrid"></div>
+                </div>
+                <!-- Pizza -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                        <span class="w-12 h-1 bg-brand-yellow"></span> Pizza
+                    </h2>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="pizzaMenuGrid"></div>
+                </div>
+                <!-- Pasta -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                        <span class="w-12 h-1 bg-brand-yellow"></span> Pasta
+                    </h2>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="pastaMenuGrid"></div>
+                </div>
+                <!-- Drinks -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                        <span class="w-12 h-1 bg-brand-yellow"></span> Drinks
+                    </h2>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="drinksMenuGrid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- DEALS PAGE -->
+    <main id="dealsPage" class="page">
+        <!-- Banner -->
+        <section class="pt-32 pb-16 bg-brand-dark relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-l from-brand-yellow/10 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <nav class="text-brand-text mb-4">
+                    <a href="#" onclick="showPage('home')" class="hover:text-brand-yellow transition-colors">Home</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-brand-yellow">Deals</span>
+                </nav>
+                <h1 class="text-5xl sm:text-6xl font-black">Hot Deals</h1>
+                <p class="text-brand-text text-xl mt-4 max-w-2xl">Unbeatable value combinations for you and your family. Limited time offers!</p>
+            </div>
+        </section>
+
+        <!-- Deals List -->
+        <section class="py-16 bg-brand-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-8" id="allDealsGrid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ABOUT PAGE -->
+    <main id="aboutPage" class="page">
+        <!-- Banner -->
+        <section class="pt-32 pb-16 bg-brand-dark relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-yellow/10 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <nav class="text-brand-text mb-4">
+                    <a href="#" onclick="showPage('home')" class="hover:text-brand-yellow transition-colors">Home</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-brand-yellow">About Us</span>
+                </nav>
+                <h1 class="text-5xl sm:text-6xl font-black">About Us</h1>
+            </div>
+        </section>
+
+        <!-- Story -->
+        <section class="py-24 bg-brand-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <span class="text-brand-yellow font-medium tracking-wider uppercase">Our Story</span>
+                        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 leading-tight">From Humble Beginnings</h2>
+                        <p class="text-brand-text text-lg leading-relaxed mb-6">
+                            NH Pizza started as a small family dream in 2018. With nothing but a passion for authentic flavors and a commitment to quality, we opened our first location with a simple mission: to serve the best pizza in town.
+                        </p>
+                        <p class="text-brand-text text-lg leading-relaxed">
+                            Today, we've grown into a beloved local institution, but our values remain unchanged. Every pizza we make carries the same dedication and love that started in our original kitchen.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=600&h=500&fit=crop" alt="NH Pizza Story" class="rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+
+                <!-- Mission & Vision -->
+                <div class="grid md:grid-cols-2 gap-8 mb-24">
+                    <div class="bg-brand-card rounded-2xl p-8 border border-brand-muted">
+                        <div class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                        <p class="text-brand-text leading-relaxed">
+                            To deliver exceptional dining experiences through premium quality ingredients, innovative recipes, and genuine hospitality that brings families and friends together.
+                        </p>
+                    </div>
+                    <div class="bg-brand-card rounded-2xl p-8 border border-brand-muted">
+                        <div class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+                        <p class="text-brand-text leading-relaxed">
+                            To become the most loved pizza destination in the region, known for our unwavering commitment to quality, sustainability, and community engagement.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Values -->
+                <div class="text-center mb-12">
+                    <span class="text-brand-yellow font-medium tracking-wider uppercase">What We Stand For</span>
+                    <h2 class="text-4xl font-bold mt-4">Our Core Values</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center p-6">
+                        <div class="text-4xl font-black text-brand-yellow mb-3">01</div>
+                        <h4 class="text-xl font-bold mb-2">Quality First</h4>
+                        <p class="text-brand-text text-sm">Never compromising on ingredients or preparation</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-4xl font-black text-brand-yellow mb-3">02</div>
+                        <h4 class="text-xl font-bold mb-2">Customer Love</h4>
+                        <p class="text-brand-text text-sm">Every customer is family</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-4xl font-black text-brand-yellow mb-3">03</div>
+                        <h4 class="text-xl font-bold mb-2">Innovation</h4>
+                        <p class="text-brand-text text-sm">Constantly evolving our menu and experience</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-4xl font-black text-brand-yellow mb-3">04</div>
+                        <h4 class="text-xl font-bold mb-2">Community</h4>
+                        <p class="text-brand-text text-sm">Supporting local farmers and businesses</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CONTACT PAGE -->
+    <main id="contactPage" class="page">
+        <!-- Banner -->
+        <section class="pt-32 pb-16 bg-brand-dark relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-yellow/10 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <nav class="text-brand-text mb-4">
+                    <a href="#" onclick="showPage('home')" class="hover:text-brand-yellow transition-colors">Home</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-brand-yellow">Contact</span>
+                </nav>
+                <h1 class="text-5xl sm:text-6xl font-black">Contact Us</h1>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-16 bg-brand-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Map -->
+                    <div class="h-96 lg:h-auto bg-brand-card rounded-2xl overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645564756836!5m2!1sen!2s"
+                            width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy" title="NH Pizza Location">
+                        </iframe>
+                    </div>
+
+                    <!-- Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="name">Name</label>
+                                <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 rounded-xl text-white focus:outline-none" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="email">Email</label>
+                                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 rounded-xl text-white focus:outline-none" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-3 rounded-xl text-white focus:outline-none" placeholder="Your phone number">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-3 rounded-xl text-white focus:outline-none resize-none" placeholder="Your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full px-8 py-4 rounded-xl text-brand-black font-bold text-lg">
+                                Send Message
+                            </button>
+                        </form>
+
+                        <!-- Contact Info -->
+                        <div class="mt-12 pt-8 border-t border-brand-muted">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-brand-yellow/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium">Address</div>
+                                        <div class="text-brand-text">123 Pizza Street, Food City, FC 12345</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-brand-yellow/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium">Phone</div>
+                                        <div class="text-brand-text">+1 (234) 567-890</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-brand-yellow/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium">Email</div>
+                                        <div class="text-brand-text">hello@nhpizza.shop</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-brand-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <a href="index.html"><img src="images/logo.png" class="footer-logo" alt="Logo"></a>
+                    </div>
+                    <p class="text-brand-text mb-6">Crafting perfect pizzas with passion since 2018. Your satisfaction is our recipe.</p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/nhpizza" target="_blank" aria-label="Instagram" class="w-10 h-10 bg-brand-card rounded-full flex items-center justify-center hover:bg-brand-yellow hover:text-brand-black transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://tiktok.com/@nhpizza" target="_blank" aria-label="TikTok" class="w-10 h-10 bg-brand-card rounded-full flex items-center justify-center hover:bg-brand-yellow hover:text-brand-black transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/nhpizza" target="_blank" aria-label="Facebook" class="w-10 h-10 bg-brand-card rounded-full flex items-center justify-center hover:bg-brand-yellow hover:text-brand-black transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-brand-text hover:text-brand-yellow transition-colors">Online
+                                Ordering</a></li>
+                        <li><a href="#" class="text-brand-text hover:text-brand-yellow transition-colors">Fast
+                                Delivery</a></li>
+                        <li><a href="#" class="text-brand-text hover:text-brand-yellow transition-colors">Custom
+                                Pizza</a></li>
+                        <li><a href="#" class="text-brand-text hover:text-brand-yellow transition-colors">Family
+                                Deals</a></li>
+                        <li><a href="#" class="text-brand-text hover:text-brand-yellow transition-colors">Catering</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" onclick="showPage('home')" class="text-brand-text hover:text-brand-yellow transition-colors">Home</a></li>
+                        <li><a href="#" onclick="showPage('menu')" class="text-brand-text hover:text-brand-yellow transition-colors">Menu</a></li>
+                        <li><a href="#" onclick="showPage('deals')" class="text-brand-text hover:text-brand-yellow transition-colors">Deals</a></li>
+                        <li><a href="#" onclick="showPage('about')" class="text-brand-text hover:text-brand-yellow transition-colors">About Us</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="text-brand-text hover:text-brand-yellow transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span class="text-brand-text">123 Pizza Street, Food City, FC 12345</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-yellow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <a href="https://wa.me/923140266865?text=Hello%20NH%20Pizza,%20I%20would%20like%20to%20place%20an%20order.">
+                                <span class="text-brand-text">+1 (234) 567-890</span>
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-yellow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="">
+                                <span class="text-brand-text">hello@nhpizza.shop</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="pt-8 border-t border-brand-muted text-center">
+                <p class="text-brand-text text-sm">&copy; 2026 All Rights Reserved | Made by
+                    <a href="https://www.instagram.com/henry.matto_?igsh=azIxNnlheTd2N2ww">
+                        <span style="font-weight: 900;">Henry Studio</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>
